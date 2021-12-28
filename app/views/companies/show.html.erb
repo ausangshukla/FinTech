@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
+<table class="table table-bordered dataTable">
+  <%= render @company %>
+</table>
+
+<div>
+  <%= link_to "Edit", edit_company_path(@company), {class: "btn btn-primary"} %> |
+  <%= link_to "Back", companies_path, {class: "btn btn-primary"} %> |
+  <%= button_to "Delete", @company, method: :delete, class: "btn btn-danger", form_class: "deleteButton" %>
+</div>
