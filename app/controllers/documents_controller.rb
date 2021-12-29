@@ -1,9 +1,9 @@
 class DocumentsController < ApplicationController
-  before_action :set_document, only: %i[ show edit update destroy ]
+  load_and_authorize_resource
 
   # GET /documents or /documents.json
   def index
-    @documents = Document.all
+    @documents.includes(:owner)
   end
 
   # GET /documents/1 or /documents/1.json

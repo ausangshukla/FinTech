@@ -45,7 +45,7 @@
         <strong>User</strong>
     </td>
     <td>
-        <%= @interest.user.first_name %>
+        <%= link_to @interest.user.name, @interest.user %>
     </td>
   </tr>
   <tr>
@@ -53,7 +53,7 @@
         <strong>Company</strong>
     </td>
     <td>
-        <%= @interest.company.name %>
+        <%= link_to @interest.company.name, @interest.company %>
     </td>
   </tr>
 </table>

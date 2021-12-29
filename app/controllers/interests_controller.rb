@@ -1,6 +1,6 @@
 class InterestsController < ApplicationController
-  before_action :set_interest, only: %i[show edit update destroy]
-
+  load_and_authorize_resource :except => ["index"]
+  
   # GET /interests or /interests.json
   def index
     @interests = Interest.all
