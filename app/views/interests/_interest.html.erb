@@ -1,0 +1,52 @@
+<tr>
+  <th>
+    <strong>Side:</strong>
+  </th>
+  <th>
+    <strong>Share type:</strong>
+  </th>
+  <th>
+    <strong>Shares min:</strong>
+  </th>
+  <th>
+    <strong>Shares max:</strong>
+  </th>
+  <th>
+    <strong>Price per share:</strong>
+  </th>
+  <th>
+    <strong>User:</strong>
+  </th>
+  <th>
+    <strong>Company:</strong>
+  </th>
+
+  <th>
+  <th>
+</tr>
+<tr id="<%= dom_id interest %>">
+<td>
+    <%= interest.side %>
+</td>  
+<td>
+    <%= interest.share_type %>
+</td>  
+<td>
+    <%= interest.shares_min %>
+</td>  
+<td>
+    <%= interest.shares_max %>
+</td>  
+<td>
+    <%= interest.price_per_share %>
+</td>  
+<td>
+    <%= interest.user_id %>
+</td>  
+<td>
+    <%= interest.company_id %>
+</td>  
+<td>
+  <%= link_to "Show", interest , {class: "btn btn-primary"}%>
+</td>
+</tr>

@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+  <h1 class="h3 mb-0 text-gray-800">Interests</h1>
+  <%= link_to "New interest", new_interest_path, {class: "btn btn-primary"}  %>
+</div>
+
+<table id="interests" class="table table-bordered dataTable">
+  <% @interests.each do |interest| %>
+    <%= render interest %>
+  <% end %>
+</table>
+

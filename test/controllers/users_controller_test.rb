@@ -34,7 +34,8 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update user" do
-    patch user_url(@user), params: { user: { first_name: @user.first_name, last_name: @user.last_name, role: @user.role } }
+    patch user_url(@user),
+          params: { user: { first_name: @user.first_name, last_name: @user.last_name, role: @user.role } }
     assert_redirected_to user_url(@user)
   end
 

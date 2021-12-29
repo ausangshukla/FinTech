@@ -1,10 +1,13 @@
 
 <tr id="<%= dom_id company %>">
 <td>
-    <%= company.name %>
+    <%= image_tag(company.logo_url, class: "logo_url") %>
   </td>  
 <td>
-    <%= company.url %>
+    <%= link_to company.name, company %>
+  </td>  
+<td>
+    <%= link_to company.url, company.url %>
   </td>  
 <td>
     <%= company.category %>
@@ -15,7 +18,4 @@
 <td>
     <%= company.funding_amount %>, <%= company.funding_unit %>
   </td>  
-<td>
-  <%= link_to "Show", company , {class: "btn btn-primary"}%>
-</td>
 </tr>

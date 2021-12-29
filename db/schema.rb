@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_28_131620) do
+ActiveRecord::Schema.define(version: 2021_12_29_044052) do
 
   create_table "action_text_rich_texts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -59,6 +59,21 @@ ActiveRecord::Schema.define(version: 2021_12_28_131620) do
     t.string "funding_unit", limit: 10
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "logo_url"
+  end
+
+  create_table "interests", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "side", limit: 5
+    t.string "share_type", limit: 10
+    t.integer "shares_min"
+    t.integer "shares_max"
+    t.float "price_per_share"
+    t.bigint "user_id", null: false
+    t.bigint "company_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["company_id"], name: "index_interests_on_company_id"
+    t.index ["user_id"], name: "index_interests_on_user_id"
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -79,4 +94,6 @@ ActiveRecord::Schema.define(version: 2021_12_28_131620) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "interests", "companies"
+  add_foreign_key "interests", "users"
 end

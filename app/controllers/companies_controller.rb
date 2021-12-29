@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController
-  before_action :set_company, only: %i[ show edit update destroy ]
+  before_action :set_company, only: %i[show edit update destroy]
 
   # GET /companies or /companies.json
   def index
@@ -7,8 +7,7 @@ class CompaniesController < ApplicationController
   end
 
   # GET /companies/1 or /companies/1.json
-  def show
-  end
+  def show; end
 
   # GET /companies/new
   def new
@@ -16,8 +15,7 @@ class CompaniesController < ApplicationController
   end
 
   # GET /companies/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /companies or /companies.json
   def create
@@ -58,14 +56,15 @@ class CompaniesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_company
-      @company = Company.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def company_params
-      params.require(:company).permit(:name, :url, :category, :founded, 
-        :funding_amount, :funding_unit, :details)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_company
+    @company = Company.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def company_params
+    params.require(:company).permit(:name, :url, :category, :founded,
+                                    :funding_amount, :funding_unit, :details, :logo_url)
+  end
 end
