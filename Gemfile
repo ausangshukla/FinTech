@@ -34,6 +34,11 @@ gem 'devise'
 gem 'cancancan'
 gem 'dotenv'
 gem 'sidekiq'
+gem 'exception_notification'
+gem 'sassc-rails' 
+
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
