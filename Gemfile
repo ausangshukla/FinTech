@@ -31,7 +31,9 @@ gem "jbuilder"
 gem "redis", "~> 4.0"
 
 gem 'devise'
+gem 'cancancan'
 gem 'dotenv'
+gem 'sidekiq'
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
@@ -61,6 +63,7 @@ group :development do
   gem "faker"
   gem 'factory_bot_rails'
   gem 'rubocop-rails', require: false
+  gem "letter_opener", group: :development
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"

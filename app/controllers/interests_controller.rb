@@ -20,6 +20,8 @@ class InterestsController < ApplicationController
   # POST /interests or /interests.json
   def create
     @interest = Interest.new(interest_params)
+    @interest.user = current_user
+    
 
     respond_to do |format|
       if @interest.save
@@ -64,7 +66,7 @@ class InterestsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def interest_params
-    params.require(:interest).permit(:side, :share_type, :shares_min, :shares_max, :price_per_share, :user_id,
-                                     :company_id)
+    params.require(:interest).permit(:side, :share_type, :shares_min, :shares_max, 
+                          :price_per_share)
   end
 end

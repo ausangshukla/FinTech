@@ -13,12 +13,12 @@
 
   <div class="form-group">
     <%= form.label :side %>
-    <%= form.text_field :side, class: "form-control"  %>
+    <%= form.select :side, Interest::SIDES, {}, {class: "form-control"} %>
   </div>
 
   <div class="form-group">
     <%= form.label :share_type %>
-    <%= form.text_field :share_type, class: "form-control"  %>
+    <%= form.select :share_type, Interest::TYPES, {}, {class: "form-control"} %>
   </div>
 
   <div class="form-group">
@@ -36,14 +36,11 @@
     <%= form.text_field :price_per_share, class: "form-control"  %>
   </div>
 
-  <div class="form-group">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id, class: "form-control"  %>
-  </div>
 
   <div class="form-group">
     <%= form.label :company_id %>
-    <%= form.text_field :company_id, class: "form-control"  %>
+    <%= form.text_field :company_id, class: "form-control", hidden: true  %>
+    <%= form.text_field :company_name, class: "form-control", readonly: true, value: interest.company.name  %>
   </div>
 
   <div class="form-group">

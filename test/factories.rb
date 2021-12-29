@@ -1,12 +1,12 @@
 FactoryBot.define do
   factory :interest do
-    side { "MyString" }
-    share_type { "MyString" }
-    shares_min { 1 }
-    shares_max { 1 }
-    price_per_share { 1.5 }
-    user { nil }
-    company { nil }
+    side { Interest::SIDES[rand(2)] }
+    share_type { Interest::TYPES[rand(2)] }
+    shares_min { rand(10) * 10 }
+    shares_max { (rand(100) + 10) * 10 }
+    price_per_share { rand(100) + rand(200) }
+    user { User.all.shuffle[0] }
+    company { Company.all.shuffle[0] }
   end
 
   factory :user do
@@ -28,4 +28,6 @@ FactoryBot.define do
     funding_amount { rand(1..20) }
     funding_unit { "Million" }
   end
+
+
 end
