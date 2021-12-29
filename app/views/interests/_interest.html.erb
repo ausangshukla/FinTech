@@ -15,10 +15,10 @@
     <%= interest.price_per_share %>
 </td>  
 <td>
-    <%= interest.user.first_name %>
+    <%= link_to interest.user.name, interest.user %>
 </td>  
 <td>
-    <%= interest.company.name %>
+    <%= link_to interest.company.name, interest.company %>
 </td>  
 <td>
   <%= link_to "Show", interest , {class: "btn btn-primary"}%>

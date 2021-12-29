@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :documents, as: :owner, dependent: :destroy
+  has_many :interests, dependent: :destroy
 
   def name
     self.first_name + " " + self.last_name
