@@ -24,3 +24,8 @@
     max-width: 100px;
     max-height: 100px;
 }
+
+input[type="file" i] {
+    height: calc(1.5em + .75rem + 7px);
+  }
+  

@@ -1,0 +1,35 @@
+
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+  <h1 class="h3 mb-0 text-gray-800">Interests</h1>
+</div>
+
+<table id="interests" class="table table-bordered dataTable">
+
+  <tr>
+    <th>
+      <strong>Side</strong>
+    </th>
+    <th>
+      <strong>Type</strong>
+    </th>
+    <th>
+      <strong>Min</strong>
+    </th>
+    <th>
+      <strong>Max</strong>
+    </th>
+    <th>
+      <strong>Price per Share</strong>
+    </th>
+    <th>
+      <strong>User</strong>
+    </th>
+    <th>
+      <strong>Company</strong>
+    </th>
+  </tr>
+
+  <% interests.each do |interest| %>
+    <%= render interest %>
+  <% end %>
+</table>

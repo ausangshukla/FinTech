@@ -1,4 +1,5 @@
 FactoryBot.define do
+  
   factory :interest do
     side { Interest::SIDES[rand(2)] }
     share_type { Interest::TYPES[rand(2)] }

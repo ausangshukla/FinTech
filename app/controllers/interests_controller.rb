@@ -11,7 +11,7 @@ class InterestsController < ApplicationController
 
   # GET /interests/new
   def new
-    @interest = Interest.new
+    @interest = Interest.new(company_id:params[:company_id])
   end
 
   # GET /interests/1/edit
@@ -67,6 +67,6 @@ class InterestsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def interest_params
     params.require(:interest).permit(:side, :share_type, :shares_min, :shares_max, 
-                          :price_per_share)
+                          :price_per_share, :company_id)
   end
 end
